@@ -39,7 +39,7 @@ class Main {
 
         Customer customer = new Customer(age,sex, isMarried, hasLicense);
 
-        CarInsurance carInsurance = new CarInsurance(customer);
+        CarInsurance carInsurance = new CarInsurance(customer,true);
 
         System.out.print(carInsurance.toString());
 

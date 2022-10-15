@@ -3,11 +3,12 @@ package ec.edu.espol.workshops;
 public class CarInsurance {
 
     private float cost = 500;
-    private boolean isValid = true;
+    private boolean isValid;
 
-    CarInsurance(Customer customer) {
+    CarInsurance(Customer customer,boolean isValid) {
+    	this.setValid(true);
         if (customer.getAge() > 80 || !customer.hasLicense()) {
-        	isValid = false;
+        	this.setValid(false);
         	cost = -1;
         	return ;
         }
@@ -24,4 +25,12 @@ public class CarInsurance {
     public String toString() {
         return String.valueOf(cost);
     }
+
+	public boolean isValid() {
+		return isValid;
+	}
+
+	public void setValid(boolean isValid) {
+		this.isValid = isValid;
+	}
 }
