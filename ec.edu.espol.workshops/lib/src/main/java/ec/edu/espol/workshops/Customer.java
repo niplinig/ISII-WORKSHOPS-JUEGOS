@@ -6,13 +6,11 @@ public class Customer {
     private boolean married;
     private boolean license;
 
-    Customer(int age, char sex, boolean married) {
-        if !isAgeValid(age) {
-            return null
-        }
+    Customer(int age, char sex, boolean married, boolean license) {
         this.age = age;
-        this.sex = sex
+        this.sex = sex;
         this.married = married;
+        this.license = license;
     }
 
     int getAge() {
@@ -24,7 +22,7 @@ public class Customer {
     }
 
     boolean isMale() {
-        return sex=="F" ? false : true
+        return sex=='F' ? false : true;
     }
 
     boolean isMarried() {
@@ -36,8 +34,11 @@ public class Customer {
     }
 
     boolean isAgeValid(int age) {
-        if age < 0 return false;
+        if (age < 0) { 
+        	return false;
+        }else {
         return true;
+        }
     }
 
 }
