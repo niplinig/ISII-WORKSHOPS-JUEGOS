@@ -1,14 +1,13 @@
 package ec.edu.espol.workshops;
 
+/**
+ * @author Nicolás Plaza
+ * */
 public class CarInsurance {
-
+	
     private float cost = 500;
-    private boolean isValid;
-
-    CarInsurance(Customer customer,boolean isValid) {
-    	this.setValid(true);
-        if (customer.getAge() > 80 || !customer.hasLicense()) {
-        	this.setValid(false);
+    CarInsurance(Customer customer) {
+    	if (customer.getAge() > 80 || !customer.hasLicense()) {
         	cost = -1;
         	return ;
         }
@@ -25,12 +24,4 @@ public class CarInsurance {
     public String toString() {
         return String.valueOf(cost);
     }
-
-	public boolean isValid() {
-		return isValid;
-	}
-
-	public void setValid(boolean isValid) {
-		this.isValid = isValid;
-	}
 }
