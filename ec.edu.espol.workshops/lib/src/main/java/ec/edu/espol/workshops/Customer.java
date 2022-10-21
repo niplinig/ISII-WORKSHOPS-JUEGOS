@@ -22,6 +22,7 @@ public class Customer {
 	 *  @param boolean This stores info about whether he has a license or not
 	 */
     Customer(int age, char sex, boolean married, boolean license) {
+    	
         this.age = age;
         this.sex = sex;
         this.married = married;
