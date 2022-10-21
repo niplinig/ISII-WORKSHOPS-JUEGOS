@@ -10,7 +10,7 @@ class Main {
 
         System.out.println("Welcome to the CarInsurance Company");
 
-        System.out.print("Enter customer age: \n " );
+        System.out.print("Enter customer age:");
 
         int age = sc.nextInt();
 
