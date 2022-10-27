@@ -5,41 +5,34 @@ import java.util.Scanner;
 class Main {
 
 	static Scanner sc = new Scanner(System.in);
-    private static int age;
-    private static char sex;
-    private static char married;
-    private static char license;
-    private static boolean isMarried;
-    private static boolean hasLicense;
-    
 
     public static void main(String[] args) {
 
         System.out.println("Welcome to the CarInsurance Company");
 
-        System.out.print("Enter customer age: \n " );
+        System.out.print("Enter customer age:");
 
-        age = sc.nextInt();
+        int age = sc.nextInt();
 
         System.out.print("\n Enter customer sex: ('F' for female or 'M' for male \n ");
 
-        sex = sc.next().charAt(0);
+        char sex = sc.next().charAt(0);
 
         System.out.print("\n Is customer married? (y for yes, n for no)\n ");
 
-        married =  sc.next().charAt(0);
+        char married = sc.next().charAt(0);
 
-        boolean isMarried = married == 'y' ? true : false;
+        boolean isMarried = married == 'y';
 
         System.out.print("\n Does customer have license? (y for yes, n for no)\n ");
 
-        license =  sc.next().charAt(0);
+        char license = sc.next().charAt(0);
         
-        boolean hasLicense = license == 'y' ? true : false;
+        boolean hasLicense = license == 'y';
 
-        Customer customer = new Customer(age,sex, isMarried, hasLicense);
-
-        CarInsurance carInsurance = new CarInsurance(customer,true);
+        Customer newCustomer = new Customer(age, sex, isMarried, hasLicense);
+                
+        CarInsurance carInsurance = CarInsurance.calCarIns(newCustomer);
 
         System.out.print(carInsurance.toString());
 
