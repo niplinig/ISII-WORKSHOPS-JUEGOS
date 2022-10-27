@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="4.7.3" sequence="1" timestamp="1666383276867" analysisTimestamp="1666383275323" release="">
+  <Project projectName="ec.edu.espol.workshops">
+    <Jar>D:\ESPOL\7MO SEMESTRE\ING II\Eclipse Juegos\ISII-WORKSHOPS-JUEGOS\ec.edu.espol.workshops\lib\bin\main</Jar>
+    <AuxClasspathEntry>D:\ESPOL\7MO SEMESTRE\ING II\Eclipse Juegos\ISII-WORKSHOPS-JUEGOS\ec.edu.espol.workshops\lib\bin\main</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Usuario\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_16.0.1.v20210528-1205\jre\lib\jrt-fs.jar</AuxClasspathEntry>
+    <SrcDir>D:\ESPOL\7MO SEMESTRE\ING II\Eclipse Juegos\ISII-WORKSHOPS-JUEGOS\ec.edu.espol.workshops\lib\src\main\java</SrcDir>
+  </Project>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" first="1">
+    <Class classname="ec.edu.espol.workshops.Main">
+      <SourceLine classname="ec.edu.espol.workshops.Main" sourcefile="Main.java" sourcepath="ec/edu/espol/workshops/Main.java"/>
+    </Class>
+    <Method classname="ec.edu.espol.workshops.Main" name="&lt;clinit&gt;" signature="()V" isStatic="true">
+      <SourceLine classname="ec.edu.espol.workshops.Main" start="7" end="7" startBytecode="0" endBytecode="45" sourcefile="Main.java" sourcepath="ec/edu/espol/workshops/Main.java"/>
+    </Method>
+    <Method classname="java.util.Scanner" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.util.Scanner" start="566" end="567" startBytecode="0" endBytecode="71" sourcefile="Scanner.java" sourcepath="java/util/Scanner.java"/>
+    </Method>
+    <SourceLine classname="ec.edu.espol.workshops.Main" start="7" end="7" startBytecode="7" endBytecode="7" sourcefile="Main.java" sourcepath="ec/edu/espol/workshops/Main.java"/>
+    <SourceLine classname="ec.edu.espol.workshops.Main" start="7" end="7" startBytecode="7" endBytecode="7" sourcefile="Main.java" sourcepath="ec/edu/espol/workshops/Main.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Fri, 21 Oct 2022 14:53:56 -0500" total_classes="3" referenced_classes="19" total_bugs="1" total_size="67" num_packages="1" java_version="17.0.4.1" vm_version="17.0.4.1+1" cpu_seconds="56.23" clock_seconds="278.86" peak_mbytes="887.32" alloc_mbytes="2024.00" gc_seconds="0.04" priority_1="1">
+    <PackageStats package="ec.edu.espol.workshops" total_bugs="1" total_types="3" total_size="67" priority_1="1">
+      <ClassStats class="ec.edu.espol.workshops.CarInsurance" sourceFile="CarInsurance.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="ec.edu.espol.workshops.Customer" sourceFile="Customer.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="ec.edu.espol.workshops.Main" sourceFile="Main.java" interface="false" size="23" bugs="1" priority_1="1"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="517" invocations="422" avgMicrosecondsPerInvocation="1226" maxMicrosecondsPerInvocation="15092" standardDeviationMicrosecondsPerInvocation="2070"/>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="193" invocations="2" avgMicrosecondsPerInvocation="96953" maxMicrosecondsPerInvocation="166673" standardDeviationMicrosecondsPerInvocation="69719"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="190" invocations="423" avgMicrosecondsPerInvocation="450" maxMicrosecondsPerInvocation="1539" standardDeviationMicrosecondsPerInvocation="218"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="94" invocations="19" avgMicrosecondsPerInvocation="4967" maxMicrosecondsPerInvocation="24018" standardDeviationMicrosecondsPerInvocation="6981"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="82" invocations="96" avgMicrosecondsPerInvocation="863" maxMicrosecondsPerInvocation="6213" standardDeviationMicrosecondsPerInvocation="889"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="52" invocations="19" avgMicrosecondsPerInvocation="2763" maxMicrosecondsPerInvocation="18310" standardDeviationMicrosecondsPerInvocation="4629"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="42" invocations="19" avgMicrosecondsPerInvocation="2216" maxMicrosecondsPerInvocation="9478" standardDeviationMicrosecondsPerInvocation="2745"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1666383276867" release="" codeSize="0" numClasses="0"/>
+  </History>
+</BugCollection>
