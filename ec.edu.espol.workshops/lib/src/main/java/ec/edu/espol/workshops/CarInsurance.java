@@ -39,13 +39,12 @@ public class CarInsurance {
     	}
     	
     	if (!isFemale && married && age < 25) {
-    		return new CarInsurance(customer, 1500);
+    		return new CarInsurance(customer, +1500);
     	}	else if (isFemale || married) {
     		return new CarInsurance(customer, -200);
-    	}	else if (age >= 45 && age < 65) {
+    	}	else if (45 >= age && age < 65) {
     		return new CarInsurance(customer, -100);
     	}
-    	
     	return new CarInsurance(customer, 0);
     }
     
