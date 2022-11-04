@@ -17,7 +17,7 @@ Feature: Calculate the insurance prime for a customer
     Examples: 
       | sex  | money | status  |
       | female |     200 | success |
-      | masculine |     0 | success    |
+      | masculine |     0 | fail    |
       
 @tag
 Feature: Calculate the insurance prime for a customer
@@ -38,7 +38,7 @@ Feature: Calculate the insurance prime for a customer
     Examples: 
       | married  | money | status  |
       | true |     200 | success |
-      | false |     0 | success    |
+      | false |     0 | fail    |
       
   @tag
 Feature: Calculate the insurance prime for a customer
@@ -58,8 +58,8 @@ Feature: Calculate the insurance prime for a customer
  
     Examples: 
       | age  | message | status  |
-      | 0 |     cant have insurance | success |
-      | 17 |     cant have insurance | success |
+      | 0 |     cant have insurance | fail |
+      | 17 |     cant have insurance | fail |
       | 18 |     can have insurance | success |
       
       
