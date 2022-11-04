@@ -33,7 +33,7 @@ class Main {
             }
             Main.license = sc.nextLine();
             if (!licenseIsValid()) {
-            	System.out.print("Invalid age, enter 10 digits in total\n"
+            	System.out.print("Invalid driving license number, enter 10 digits in total\n"
             			+ "Enter customer driving license number: ");
             }
         } while (!licenseIsValid());
