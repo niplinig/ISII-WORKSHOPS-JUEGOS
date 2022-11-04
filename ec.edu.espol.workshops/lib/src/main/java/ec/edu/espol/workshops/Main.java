@@ -11,7 +11,7 @@ class Main {
 	static String license;
 	
 	public static boolean ageIsValid() {
-		return (Main.age < 80) || (Main.age > 18);
+		return (Main.age < 80) && (Main.age > 18);
 	}
 	
 	public static boolean licenseIsValid() {
