@@ -10,15 +10,15 @@ Feature: Calculate the insurance prime for a customer
  
   @tag2
   Scenario Outline: The customer is female
-    Given Is <sex>
+    Given Is "sex"
     When Calculate the premiun
-    Then Substract <money> from the base insurance
+    Then Substract "money" from the base insurance
  
     Examples: 
-      | sex  | money | status  |
-      | female |     200 | success |
-      | masculine |     0 | fail    |
-      
+      | sex  | money |
+      | female |     200 |
+      | masculine |     0 |
+         
 @tag
 Feature: Calculate the insurance prime for a customer
  
