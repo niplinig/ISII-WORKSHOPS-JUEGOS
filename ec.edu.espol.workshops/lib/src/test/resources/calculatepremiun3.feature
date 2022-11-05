@@ -2,7 +2,7 @@
 Feature: Calculate the insurance prime for a customer
  
   @tag1
-  Scenario: The customer is famale 
+  Scenario: The customer is female 
     Then Substract $200 from the base insurance
     given sex is female
     When Calculate the premium

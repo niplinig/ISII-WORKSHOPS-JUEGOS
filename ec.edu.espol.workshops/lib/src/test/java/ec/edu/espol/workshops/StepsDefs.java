@@ -7,26 +7,21 @@ import io.cucumber.java.en.When;
 import static org.junit.Assert.*;
 
 public class StepsDefs {
-	private String today;
-	private String actualAnswer;
+	private CarInsurance actualAnswer;
+	char customerSex;
 	
-	@Given("today is Sunday")
-	public void today_is_Sunday() {
-	today = "Sunday";
+	@Given("Is {char}")
+	public void the_customer_is_female(char sex) {
+		customerSex = sex;
 	}
 	
-	@Given("today is {string}")
-	public void today_is(String today) {
-	this.today = today;
+	@When("Calculate the premium")
+	public void calculate_the_premium() {
+	actualAnswer = new CarInsurance(new Customer(20, customerSex, true, true), 0);
 	}
 	
-	@When("I ask whether it's Friday yet")
-	public void i_ask_whether_it_s_Friday_yet() {
-	actualAnswer = IsItFriday.isItFriday(today);
-	}
-	
-	@Then("I should be told {string}")
-	public void i_should_be_told(String expectedAnswer) {
-	assertEquals(expectedAnswer, actualAnswer);
+	@Then("Substract {int} from the base insurance")
+	public void substract_from_the_base_insurance(int expectedAnswer) {
+	assertEquals(expectedAnswer, actualAnswer.getCost());
 	}
 }
