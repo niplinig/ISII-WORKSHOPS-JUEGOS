@@ -22,6 +22,10 @@ public class CarInsurance {
 		this.cost = 500 + cost;
     }
 	
+	public CarInsurance() {
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
 	 * This method is used to create the car insurance.
 	 * @param Customer This is the first parameter to calCarIns
@@ -48,6 +52,10 @@ public class CarInsurance {
     	return new CarInsurance(customer, 0);
     }
     
+	public int getCost() {
+		return cost;
+	}
+	
   @Override
   public String toString() {
     	return Integer.toString(cost);
