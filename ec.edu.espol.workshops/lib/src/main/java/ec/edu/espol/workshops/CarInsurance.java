@@ -13,51 +13,46 @@ package ec.edu.espol.workshops;
 public class CarInsurance {
 	
 	private int cost;
-	
-	/**
-	 * Constructor of the class
-	 * @param int This is the cost of the insurance
-	 */
-	CarInsurance(Customer customer, int cost) {
-		this.cost = 500 + cost;
+    private Customer customer;
+    /**
+     * Constructor of the class
+     */
+    public CarInsurance(Customer customer) {
+        this.customer = customer;
+        this.cost = 500;
     }
-	
-	public CarInsurance() {
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
-	 * This method is used to create the car insurance.
-	 * @param Customer This is the first parameter to calCarIns
-	 * @return CarInsurance This returns an Object with the cost
-	 */
-	public static CarInsurance calCarIns(Customer customer) {
-    	
-    	int age = customer.getAge();
+    /**
+     * This method is used to create the car insurance.
+     * @param Customer This is the first parameter to calCarIns
+     * @return CarInsurance This returns an Object with the cost
+     */
+    public static CarInsurance calCarIns(Customer customer) {
+        int age = customer.getAge();
         boolean isFemale = customer.isFemale();
         boolean married = customer.isMarried();
         boolean licensed = customer.hasLicense();
-        
-    	if (age > 80 && !licensed) {
-    		return new CarInsurance(customer, -500);
-    	}
-    	
-    	if (!isFemale && married && age < 25) {
-    		return new CarInsurance(customer, +1500);
-    	}	else if (isFemale || married) {
-    		return new CarInsurance(customer, -200);
-    	}	else if (45 >= age && age < 65) {
-    		return new CarInsurance(customer, -100);
-    	}
-    	return new CarInsurance(customer, 0);
+        CarInsurance result = new CarInsurance(customer);
+        if (age > 80 && !licensed) {
+            result.cost = 0;
+            return result;
+        }
+        if (!isFemale && !married && age < 25) {
+            result.cost += 1500;
+            return result;
+        }
+        if (isFemale || married) {
+            result.cost -= 200;
+        }
+        if (age >= 45 && age < 65) {
+            result.cost -= 100;
+        }
+        return result;
     }
-    
-	public int getCost() {
-		return cost;
-	}
-	
+    public int getCost() {
+        return cost;
+    }
   @Override
   public String toString() {
-    	return Integer.toString(cost);
+        return Integer.toString(cost);
     }
 }
