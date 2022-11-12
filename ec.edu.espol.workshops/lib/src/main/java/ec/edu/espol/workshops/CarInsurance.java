@@ -14,6 +14,7 @@ public class CarInsurance {
 	
 	private int cost;
     private Customer customer;
+    
     /**
      * Constructor of the class
      */
@@ -21,22 +22,26 @@ public class CarInsurance {
         this.customer = customer;
         this.cost = 500;
     }
+ 
     /**
      * This method is used to create the car insurance.
      * @param Customer This is the first parameter to calCarIns
      * @return CarInsurance This returns an Object with the cost
      */
     public static CarInsurance calCarIns(Customer customer) {
+        
         int age = customer.getAge();
         boolean isFemale = customer.isFemale();
+        boolean isMale = customer.isMale();
         boolean married = customer.isMarried();
         boolean licensed = customer.hasLicense();
         CarInsurance result = new CarInsurance(customer);
+        
         if (age > 80 && !licensed) {
             result.cost = 0;
             return result;
         }
-        if (!isFemale && !married && age < 25) {
+        if (isMale && !married && age < 25) {
             result.cost += 1500;
             return result;
         }
@@ -48,9 +53,11 @@ public class CarInsurance {
         }
         return result;
     }
+    
     public int getCost() {
         return cost;
     }
+    
   @Override
   public String toString() {
         return Integer.toString(cost);
