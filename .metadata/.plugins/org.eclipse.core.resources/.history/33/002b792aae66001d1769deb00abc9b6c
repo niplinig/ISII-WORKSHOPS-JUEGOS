@@ -1,0 +1,36 @@
+#Author: your.email@your.domain.com
+#Keywords Summary :
+#Feature: List of scenarios.
+#Scenario: Business rule through list of steps with arguments.
+#Given: Some precondition step
+#When: Some key actions
+#Then: To observe outcomes or validation
+#And,But: To enumerate more Given,When,Then steps
+#Scenario Outline: List of steps for data-driven as an Examples and <placeholder>
+#Examples: Container for s table
+#Background: List of steps run before each of the scenarios
+#""" (Doc Strings)
+#| (Data Tables)
+#@ (Tags/Labels):To group Scenarios
+#<> (placeholder)
+#""
+## (Comments)
+#Sample Feature Definition Template
+
+@tag
+Feature: TC1
+ 
+  @tag1
+  Scenario: Insurence base price
+    Given Is the customer is a <sex>
+    And Is <age> years old
+    And Is <married>
+    And Has license number <licenseNumber>
+    When Calculate the insurance
+    Then The insurance will cost <insurance>
+    
+    Examples:
+        | sex | age | married | licenseNumber | insurance |
+        | M | 20 | n | 0957303426 | 2000 |
+        | M | 26 | n | 0957303426 | 500 |
+        | F | 46 | y | 0957303426 | 200 |

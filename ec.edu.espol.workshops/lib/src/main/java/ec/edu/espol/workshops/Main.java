@@ -3,88 +3,79 @@ package ec.edu.espol.workshops;
 import java.util.Scanner;
 
 class Main {
-
-	 static Scanner sc = new Scanner(System.in);
-	    static int age;
-	    static char sex;
-	    static char married;
-	    static String license;
-	    
-	    public static boolean ageIsValid() {
-	        return (Main.age < 80) && (Main.age > 18);
-	    }
-	    
-	    public static boolean licenseIsValid() {
-	        return Main.license.length() == 10;
-	    }
+	 	private static Scanner scanner = new Scanner(System.in);
+	    private static int age;
+	    private static char sex;
+	    private static char married;
+	    private static int licenseNumber;
 	    
 	    public static void main(String[] args) {
+	    	
 	        System.out.println("Welcome to the CarInsurance Company");
-	        
-	        System.out.print("Enter customer driving license number: ");
+	        System.out.print("Enter customer driving licenseNumber number: ");
 	        
 	        do {
-	            while(!sc.hasNextInt()) {
-	                System.out.print("Invalid driving license number\n"
+	            while(!scanner.hasNextInt()) {
+	                System.out.print("Invalid driving licenseNumber number\n"
 	                        + "Please, enter a number\n"
-	                        + "Enter customer driving license number: ");
-	                sc.next();
+	                        + "Enter customer driving licenseNumber number: ");
+	                scanner.next();
 	            }
-	            Main.license = sc.nextLine();
-	            if (!licenseIsValid()) {
-	                System.out.print("Invalid driving license number, enter 10 digits in total\n"
-	                        + "Enter customer driving license number: ");
+	            licenseNumber = Integer.parseInt(scanner.nextLine());
+	            
+	            if (!Calculator.isLicenseValid(licenseNumber)) {
+	                System.out.print("Invalid driving licenseNumber number, enter 9 digits in total\n"
+	                        + "Enter customer driving licenseNumber number: ");
 	            }
-	        } while (!licenseIsValid());
+	        } while (!Calculator.isLicenseValid(licenseNumber));
 	        
-	        System.out.println("Driving license entered " + Main.license);
+	        System.out.println("Driving license number entered " + Main.licenseNumber);
 	        
 	        System.out.print("Enter customer age: ");
 	        
 	        do {
-	            while(!sc.hasNextInt()) {
+	            while(!scanner.hasNextInt()) {
 	                System.out.print("Invalid age\n"
 	                        + "Please, enter a number\n"
 	                        + "Enter customer age: ");
-	                sc.next();
+	                scanner.next();
 	            }
-	            Main.age = sc.nextInt();
-	            if (!ageIsValid()) {
+	            age = scanner.nextInt();
+	            if (!Calculator.isAgeValid(age)) {
 	                System.out.print("Invalid age, customer should be older than 18 and younger than 80\n"
 	                        + "Enter customer age: ");
 	            }
-	        } while (!ageIsValid());
+	        } while (!Calculator.isAgeValid(age));
 	        
-	        System.out.println("Age entered " + Main.age);
+	        System.out.println("Age entered " + age);
 	        System.out.print("Enter customer sex ('F' for female or 'M' for male): ");
 	        
-	        while(!sc.hasNext("[MF]")) {
+	        while(!scanner.hasNext("[MF]")) {
 	            System.out.print("Invalid sex option\n"
 	                    + "Please, enter 'F' or 'M' in uppercase\n"
 	                    + "Enter customer sex ('F' for female or 'M' for male): ");
-	            sc.next();
+	            scanner.next();
 	        }
-	        Main.sex = sc.next().charAt(0);
+	        sex = scanner.next().charAt(0);
 	        
-	        System.out.println("Sex entered " + Main.sex);
+	        System.out.println("Sex entered " + sex);
 	        System.out.print("Is customer married? (y for yes, n for no): ");
 	        
-	        while(!sc.hasNext("[yn]")) {
+	        while(!scanner.hasNext("[yn]")) {
 	            System.out.print("Invalid option\n"
 	                    + "Please, enter 'y' or 'n' in lowercase\n"
 	                    + "Is customer married? (y for yes, n for no): ");
-	            sc.next();
+	            scanner.next();
 	        }
-	        Main.married = sc.next().charAt(0);
+	        married = scanner.next().charAt(0);
 	        
-	        System.out.println("Answer entered " + Main.married);
+	        System.out.println("Answer entered " + married);
 	  
-	        boolean isMarried = Main.married == 'y';
-	        Customer newCustomer = new Customer(age, sex, isMarried, license);
-	                
-	        CarInsurance carInsurance = CarInsurance.calCarIns(newCustomer);
-	        System.out.println("\nThe total cost is " + carInsurance.toString());
-	        sc.close();
+	        boolean isMarried = married == 'y';
+	        Customer newCustomer = new Customer(age, sex, isMarried, licenseNumber);
+
+	        System.out.println("\nThe total cost is " + Calculator.calCarIns(newCustomer));
+	        scanner.close();
 	    }
 
 }

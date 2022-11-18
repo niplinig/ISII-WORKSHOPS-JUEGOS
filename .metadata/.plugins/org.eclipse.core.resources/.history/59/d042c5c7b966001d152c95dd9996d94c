@@ -1,0 +1,28 @@
+package ec.edu.espol.workshops;
+
+public static class Calculator {
+ 
+	public static double calCarIns(Customer customer) {
+	    
+		double cost = 500.0;
+	    short age = customer.getAge();
+	    boolean isFemale = customer.isFemale();
+	    boolean isMale = customer.isMale();
+	    boolean isMarried = customer.isMarried();
+	    boolean hasLicense = customer.hasLicense();
+	    
+	    if (age > 80 && !hasLicense) {
+	        return cost = 0;
+	    }
+	    if (isMale && !isMarried && age < 25) {
+	        return cost + 1500;
+	    }
+	    if (isFemale || isMarried) {
+	        return cost - 200;
+	    }
+	    if (age >= 45 && age < 65) {
+	        return cost - 100;
+	    }
+	    return cost;
+	}
+}

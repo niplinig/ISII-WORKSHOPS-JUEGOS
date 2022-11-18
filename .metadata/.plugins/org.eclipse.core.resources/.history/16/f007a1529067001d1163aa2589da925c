@@ -1,0 +1,70 @@
+#Author: your.email@your.domain.com
+#Keywords Summary :
+#Feature: List of scenarios.
+#Scenario: Business rule through list of steps with arguments.
+#Given: Some precondition step
+#When: Some key actions
+#Then: To observe outcomes or validation
+#And,But: To enumerate more Given,When,Then steps
+#Scenario Outline: List of steps for data-driven as an Examples and <placeholder>
+#Examples: Container for s table
+#Background: List of steps run before each of the scenarios
+#""" (Doc Strings)
+#| (Data Tables)
+#@ (Tags/Labels):To group Scenarios
+#<> (placeholder)
+#""
+## (Comments)
+#Sample Feature Definition Template
+
+@tag
+Feature: TC1
+ 
+  @tag1
+  Scenario: Insurence base price
+    Given Is <age> years old
+    And Is the customer is a "<sex>"
+    And Is "<married>"
+    And Has license number <licenseNumber>
+    When Calculate the insurance
+    Then The insurance will cost <insurance>
+    
+    Examples:
+        | age | sex | married | licenseNumber | insurance |
+        | 18 | M | n | 100 000 000 | 2000 |
+        | 17 | M | n | 100 000 000 | -1 |
+        | 19 | M | n | 100 000 000 | 2000 |
+        | 80 | M | n | 100 000 000 | 500 |
+        | 79 | M | n | 100 000 000 | 500 |
+        | 81 | M | n | 100 000 000 | -1 |
+        | 18 | M | n | 99 999 999 | -1 |
+        | 18 | M | n | 100 000 001 | 2000 |
+        | 18 | M | n | 999 999 999 | 2000 |
+        | 18 | M | n | 999 999 998 | 2000 |
+        | 18 | M | n | 1 000 000 000 | 2000 |
+        | 80 | M | n | 999 999 999 | 500 |
+        | 18 | F | n | 100 000 000 | 300 |      
+        | 17 | F | n | 100 000 000 | -1 |
+        | 19 | F | n | 100 000 000 | 300 |
+        | 80 | F | n | 100 000 000 | 300 |
+        | 79 | F | n | 100 000 000 | 300 |
+        | 81 | F | n | 100 000 000 | -1 |
+        | 18 | F | n | 99 999 999 | -1 | 
+        | 18 | F | n | 100 000 001 | 300 |
+        | 18 | F | n | 999 999 999 | 300 |
+        | 18 | F | n | 999 999 998 | 300 |
+        | 18 | F | n | 1 000 000 000 | -1 |
+        | 80 | F | n | 999 999 999 | 300 |
+        
+        | 18 | M | n | 100 000 000 | 2000 |
+        | 17 | M | n | 100 000 000 | -1 |
+        | 19 | M | n | 100 000 000 | 2000 |
+        | 80 | M | n | 100 000 000 | 500 |
+        | 79 | M | n | 100 000 000 | 500 |
+        | 81 | M | n | 100 000 000 | -1 |
+        | 18 | M | n | 99 999 999 | -1 |
+        | 18 | M | n | 100 000 001 | 2000 |
+        | 18 | M | n | 999 999 999 | 2000 |
+        | 18 | M | n | 999 999 998 | 2000 |
+        | 18 | M | n | 1 000 000 000 | 2000 |
+        | 80 | M | n | 999 999 999 | 500 |    
