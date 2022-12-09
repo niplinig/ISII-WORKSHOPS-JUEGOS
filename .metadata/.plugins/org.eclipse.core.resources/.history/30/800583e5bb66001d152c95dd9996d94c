@@ -1,0 +1,45 @@
+package ec.edu.espol.workshops;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import static org.junit.Assert.*;
+
+public class StepDefinitions {
+    double actualAnswer;
+    String sex;
+    Boolean isMarried;
+    Integer licenseNumber;
+    Integer age;
+    
+    @Given("Is the customer is a {string}")
+    public void the_customer_is_male(String value) {
+        sex = value;
+    }
+    
+    @Given("Is {int} years old")
+    public void the_customer_is(Integer value) {
+        age = value;
+    }
+    
+    @Given("Is {string}")
+    public void the_customer_is_married(Character value) {
+        isMarried = value.equals("y");
+    }
+    
+    @Given("Has license number {int}")
+    public void the_customer_license_number(Integer value) {
+        licenseNumber = value;
+    }
+    
+    @When("Calculate the insurance")
+    public void calculate_the_insurance() {
+        Customer customer = new Customer(age, sex, isMarried, licenseNumber);
+        actualAnswer = Calculator.calCarIns(customer);
+    }
+    
+    @Then("The insurance will cost {int}")
+    public void the_insurance_will_cost(Integer expectedAnswer) {
+    	int expectedAnswerInt = expectedAnswer;
+        assertEquals(expectedAnswerInt, actualAnswer.getCost());
+    }
+}

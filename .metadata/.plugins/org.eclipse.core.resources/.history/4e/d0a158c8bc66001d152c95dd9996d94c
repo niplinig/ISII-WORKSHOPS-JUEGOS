@@ -1,0 +1,36 @@
+package ec.edu.espol.workshops;
+
+public class Calculator {
+	
+    public static boolean isAgeValid(int age) {
+        return (18 < age) && (age < 80);
+    }
+    
+    public static boolean isLicenseValid(int licenseNumber) {
+        return (99999999 < licenseNumber) && (licenseNumber < 999999999);
+    }
+ 
+	public static double calCarIns(Customer customer) {
+	    
+		double cost = 500.0;
+	    int age = customer.getAge();
+	    boolean isFemale = customer.isFemale();
+	    boolean isMale = customer.isMale();
+	    boolean isMarried = customer.isMarried();
+	    boolean hasLicense = customer.hasLicense();
+	    
+	    if (age > 80 && !hasLicense) {
+	        return cost = 0.0;
+	    }
+	    if (isMale && !isMarried && age < 25) {
+	        return cost + 1500.0;
+	    }
+	    if (isFemale || isMarried) {
+	        return cost - 200.0;
+	    }
+	    if (age >= 45 && age < 65) {
+	        return cost - 100.0;
+	    }
+	    return cost;
+	}
+}

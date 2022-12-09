@@ -1,0 +1,12 @@
+package ec.edu.espol.workshops;
+
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+		plugin={"pretty", "html:build/reports/cucumber.report.html"},
+		monochrome=true,
+		features = {"src/test/resources"}
+)
+public class Runner {
+	
+}

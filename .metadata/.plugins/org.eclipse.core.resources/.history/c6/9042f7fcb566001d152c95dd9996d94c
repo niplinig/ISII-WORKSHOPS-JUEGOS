@@ -1,0 +1,34 @@
+package ec.edu.espol.workshops;
+
+public class Customer {
+		private int age;
+	    private char sex;
+	    private boolean married;
+	    private int licenseNumber;
+
+	    Customer(int age, char sex, boolean married, int licenceNumber ) {
+	        this.age = age;
+	        this.sex = sex;
+	        this.married = married;
+	        this.licenseNumber = licenceNumber;
+	    }
+	    int getAge() {
+	        return age;
+	    }
+	    char getSex() {
+	        return sex;
+	    }
+	    boolean isFemale() {
+	        return sex == 'F';
+	    }
+	    
+	    boolean isMale() {
+	        return sex == 'M';
+	    }
+	    boolean isMarried() {
+	        return married;
+	    }   
+	    boolean hasLicense() {
+	        return licenseNumber != 0;
+	    }
+}
