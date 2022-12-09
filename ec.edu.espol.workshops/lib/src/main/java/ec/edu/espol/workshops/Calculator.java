@@ -12,7 +12,7 @@ public class Calculator {
  
 	public static int calCarIns(Customer customer) {
 	    
-		int cost = 500;
+		int cost = 600;
 	    int age = customer.getAge();
 	    boolean isFemale = customer.isFemale();
 	    boolean isMale = customer.isMale();
